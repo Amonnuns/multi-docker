@@ -1,8 +1,10 @@
 const keys = require('./keys');
 const redis = require('redis');
 
+const redishost = keys.redisHost
+console.log(redishost)
 const redisClient = redis.createClient({
-  host: 'redis',
+  host: 'multi-docker-redis.mqrqjn.0001.use1.cache.amazonaws.com',
   port: 6379,
   retry_strategy: () => 1000,
 });

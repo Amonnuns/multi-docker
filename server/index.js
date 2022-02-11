@@ -9,18 +9,14 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-console.log(keys.pgUser,
-  keys.pgHost,
-  keys.pgDatabase,
-  keys.pgPassword,
-  keys.pgPort, keys.redisHost, keys.redisPort)
+
 
 // Postgres Client Setup
 const { Pool } = require('pg')
 const pgClient = new Pool({
   user: 'postgres',
-  host: 'postgres',
-  database: 'postgres',
+  host: 'database-1.cvqvgskfl0ie.us-east-1.rds.amazonaws.com',
+  database: 'fibvalues',
   password: 'postgres_password',
   port: 5432,
 });
@@ -38,7 +34,7 @@ console.log(keys.redisHost.toString())
 // Redis Client Setup
 const redis = require("redis");
 const redisClient = redis.createClient({
-  host: 'redis',
+  host: 'multi-docker-redis.mqrqjn.0001.use1.cache.amazonaws.com',
   port: 6379,
   retry_strategy: () => 1000,
 });
