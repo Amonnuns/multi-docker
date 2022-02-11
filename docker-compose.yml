@@ -4,7 +4,7 @@ services:
     image: "ramonnuns/multi-client"
     mem_limit: 128m
     hostname: client
-  api:
+  server:
     image: "ramonnuns/multi-server"
     mem_limit: 128m
     hostname: api
